@@ -6,9 +6,7 @@ class KalimbaContainer extends Component {
     insKalimba: null
   };
 
-  componentDidMount = async () => {};
-
-  handleTineLick = tine => {
+  handleTineTap = tine => {
     alert("pressed " + tine.note);
   };
   render() {
@@ -44,7 +42,7 @@ class KalimbaContainer extends Component {
               fontSize: 20
             }}
             onPress={() => {
-              this.handleTineLick(tine);
+              this.handleTineTap(tine);
             }}
           >
             <Text style={{ top: 470 + tine.len * 6, fontSize: 10 }}>
