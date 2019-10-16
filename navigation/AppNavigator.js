@@ -1,4 +1,4 @@
-import React from "reactn";
+import React, { setGlobal } from "reactn";
 import { createAppContainer, createSwitchNavigator } from "react-navigation";
 
 import MainTabNavigator from "./MainTabNavigator";

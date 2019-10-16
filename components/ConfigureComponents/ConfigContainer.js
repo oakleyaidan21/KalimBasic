@@ -7,7 +7,22 @@ import { tsConstructSignatureDeclaration } from "@babel/types";
 class ConfigContainer extends Component {
   state = {
     keySigText: this.global.keySig,
-    tineColors: this.global.colors
+    tineColors: this.global.colors,
+    themeColors: [
+      "green",
+      "darkgreen",
+      "red",
+      "darkred",
+      "rgb(0,123,255)",
+      "darkblue",
+      "violet",
+      "darkviolet",
+      "yellow",
+      "darkyellow",
+      "purple",
+      "darkpurple",
+      "brown"
+    ]
   };
 
   changeKeySig = () => {
@@ -17,10 +32,8 @@ class ConfigContainer extends Component {
         var counter = 1;
         for (var j = 1; j < scaleKeys.keySignatures[i].length; j++) {
           var color = "white";
-          var len = j;
-
           if (j % 3 === 0) {
-            color = "rgb(0,123,255)";
+            color = this.global.themeColor;
           }
           if (j > 9) {
             counter--;
@@ -34,7 +47,7 @@ class ConfigContainer extends Component {
             id: j
           });
         }
-        this.setGlobal({ tines: temp });
+        this.setGlobal({ tines: temp, themeColor: this.state.themeColors[i] });
         alert("Changed to " + this.state.keySigText);
         return;
       }
@@ -77,7 +90,7 @@ class ConfigContainer extends Component {
             width: 70,
             height: "25%",
             top: 20,
-            backgroundColor: "rgb(0,123,255)",
+            backgroundColor: this.global.themeColor,
             borderRadius: 5,
             alignItems: "center"
           }}
